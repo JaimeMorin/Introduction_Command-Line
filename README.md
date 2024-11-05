@@ -83,17 +83,19 @@ Send a document via email | A = Attached
 echo "Message Body Here" | mail -s "Subject Here" example_user@gmail.com -A document.txt
 ```
 
-### Info Management 
+### Text Data Management 
 Print the first **X** lines (e.g. four lines) of a **file**
 ```
 head -n 4  nameofthefile
 ```
 
-**List** all documents or folders from a directory | then **split** the name of the document using "_" as a separator, and **print** the last field ("$NF")
+**List** all documents or folders from a directory | then **split** the name of the document using a separator, and **print** the specified field 
+1. **Text Delimitation**: Space (no need to specify), underscore -F'_' 
+2. **Print**: First line _$1_; Last line _$NF_; Second-to-last _$NF-1_
 ```
-ls path/to/folder/ | awk -F'_' '{print $NF}' # Print the last field
-ls path/to/folder/ | awk -F'_' '{print $NF-1}' # Print the second-to-last field
-ls path/to/folder/ | awk '{print $NF-1}' # If -F is not given, Space separated is the default
+ls path/to/folder/ | awk -F'_' '{print $NF}' 
+ls path/to/folder/ | awk -F'_' '{print $NF-1}' 
+ls path/to/folder/ | awk '{print $NF-1}' 
 ```
 You can specify a specific type of file like here
 ```
