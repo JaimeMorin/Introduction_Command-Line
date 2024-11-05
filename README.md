@@ -95,7 +95,8 @@ head -n 4  nameofthefile
 ```
 ls path/to/folder/ | awk -F'_' '{print $NF}' 
 ls path/to/folder/ | awk -F'_' '{print $NF-1}' 
-ls path/to/folder/ | awk '{print $NF-1}' 
+ls path/to/folder/ | awk '{print $NF-1}'
+ls path/to/folder/ | awk '{print $1}' 
 ```
 You can specify a specific type of file like here
 ```
