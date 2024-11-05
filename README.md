@@ -91,7 +91,9 @@ head -n 4  nameofthefile
 
 **List** all documents or folders from a directory | then **split** the name of the document using "_" as a separator, and **print** the last field ("$NF")
 ```
-ls path/to/folder/ | awk -F'_' '{print $NF}'
+ls path/to/folder/ | awk -F'_' '{print $NF}' # Print the last field
+ls path/to/folder/ | awk -F'_' '{print $NF-1}' # Print the second-to-last field
+ls path/to/folder/ | awk '{print $NF-1}' # If -F is not given, Space separated is the default
 ```
 You can specify a specific type of file like here
 ```
