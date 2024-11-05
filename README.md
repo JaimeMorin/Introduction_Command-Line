@@ -119,6 +119,61 @@ Remove non-empty folder
 rm -r nameofdirectory 
 ```
 
+## 4. awk
+awk is a tool for processing and analyzing text data, handy for handling structured data like tables and log files. It reads each line of a file or input, splits it into fields following separator criteria (space, comma, underscore), and lets you manipulate or extract those specific extracts. For example, if you have **data.txt** like this: 
+```
+James  25  Engineer
+Jorde  30  Doctor
+Vania  22  Artist
+```
+You can print the second column in data.txt (_space delimitation is the default_)
+```
+awk '{print $2}' data.txt
+```
+and you will get
+```
+25
+30
+22
+```
 
+
+## 5. grep
+Grep is similar but mainly used for searching and filtering text based on patterns (Like a SEARCH function). It is convenient for working with fasta files. Let's suppose you have a fasta file, e.g., "scaffolds.fasta". There are many things you can do
+```
+>NODE_01
+ATGCGTACGATCGACTGACG...
+...
+>NODE_02
+TACGATCGTACGTAGCATCG...
+...
+>NODE_03
+TACGATCGTACGTAGCATCG...
+....
+.
+.
+.
+```
+
+Find All Headers: Search for lines starting (^) by ">"
+```
+grep "^>" scaffolds.fasta
+```
+Count (-c) the Number of Sequences in a FASTA file
+```
+grep -c "^>" sequences.fasta
+```
+Print the matching query line and the next line. _Useful when it is a single-line fasta file_
+```
+grep -A 1 NODE_12 scaffolds.fasta
+```
+Print the line with the query (NODE_12) and the 10 lines after (-A)
+```
+grep -A 10 NODE_12 scaffolds.fasta
+```
+List Only the IDs of Sequences with a Specific Keyword (e.g., mitochondria). The second grep is second filter to get only headers (>) 
+```
+grep "mitochondria" scaffolds.fasta | grep "^>" 
+```
 
 
