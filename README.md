@@ -82,6 +82,11 @@ Send a document via email | A = Attached
 ```
 echo "Message Body Here" | mail -s "Subject Here" example_user@gmail.com -A document.txt
 ```
+Create a Symbolic Link (Shortcut or Direct access). Useful for organizing data without duplicating it 
+```
+ln -s /path/to/source/directory path/to/target/location/for/folder/link
+```
+
 
 ### Text Data Management 
 Print the first **X** lines (e.g. four lines) of a **file**
