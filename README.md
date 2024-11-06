@@ -1,6 +1,10 @@
 # Introduction to Command-Line Tools
 
 ## 1. Set Unix terminal
+Ubuntu 
+```
+https://ubuntu.com/
+```
 Windows Subsystem for Linux (WSL)
 ```
 https://learn.microsoft.com/en-us/windows/wsl/install 
